@@ -2,6 +2,16 @@
 
 ## Exercises
 
+Running a web application on Mesos (node.js + mongo)
+something like: https://github.com/ContainerSolutions/node-openshift-sample
+2 containers: 1 for frontend (node js), 1 for backend (mongodb)
+
+1. deploy frontend
+2. deploy backend
+3. link frontend and backend
+4. scale up frontend
+5. kill some of the frontend
+
 ### Mesos
 
 * How can I find application logs?

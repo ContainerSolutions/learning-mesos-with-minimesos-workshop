@@ -24,6 +24,8 @@
 
 ### Marathon
 
+* How do I run a shell command on Marathon?
+* How do I run a container on Marathon?
 * How can I configure where my application gets deployed?
 
 ### Frameworks

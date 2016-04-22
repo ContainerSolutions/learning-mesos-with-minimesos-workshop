@@ -1,5 +1,9 @@
 # learning-mesos-with-minimesos-workshop
 
+## General Overview
+
+#### What is Mesos, what problem does it solve and what can I do with it?
+
 ## Exercises
 
 ### Mesos

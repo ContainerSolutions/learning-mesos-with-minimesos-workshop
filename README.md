@@ -94,15 +94,23 @@
 
 ### Mesos
 
-#### Create a default minimesos cluster
+#### Create a default minimesos cluster and retrieve the state file
 
-#### Change the amount of resources
+#### Destroy the cluster. Change the amount of resources and now retrieve the state file again
+
+#### View the Weave Scope UI
+
+### Marathon
+
+#### Deploy nginx and connect to it 
+
+### Check the Weave Scope UI to see your nginx container
 
 ### Frameworks
 
+#### Deploy Mesos Elasticsearch
+
 ### Zookeeper
-
-
 
 Running a web application on Mesos (node.js + mongo)
 something like: https://github.com/ContainerSolutions/node-openshift-sample

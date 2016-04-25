@@ -92,6 +92,18 @@
 
 ## Exercises
 
+### Mesos
+
+#### Create a default minimesos cluster
+
+#### Change the amount of resources
+
+### Frameworks
+
+### Zookeeper
+
+
+
 Running a web application on Mesos (node.js + mongo)
 something like: https://github.com/ContainerSolutions/node-openshift-sample
 2 containers: 1 for frontend (node js), 1 for backend (mongodb)

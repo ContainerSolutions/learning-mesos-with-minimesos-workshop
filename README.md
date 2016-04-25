@@ -1,45 +1,20 @@
 # learning-mesos-with-minimesos-workshop
 
-## General Overview
-
-### Workshop structure
+## Workshop structure
 
 * Presentation - Covers Mesos, Zookeeper, frameworks & Marathon
 * Exercises using minimesos - Covers the same topics but now with focused exercises using minimesos
 * Wrap up - Summarizes the topics and allows for Q&A
 
-#### What is Mesos, what problem does it solve and what can I do with it?
-
-Mesos is a distributed resource manager that allows you to treat your machines as a single computer. 
-
-Benefits:
-
-* Reuse the same machines for multiple workloads. Instead of sepaeate ES, Hadoop and Spark clusters use the same machines.
-* Cost savings through increased utilization
-* Mesos applications can react dynamically by spawning or removing tasks based on the environment
-
-## Notes
-
-* Add links to CS blogs in slides
-* Downsides of Ansible / Chef is that they create a static partitioning of the cluster.
-* Try satellite for monitoring 
-* Add links to papers: Mesos, Zookeeper, PAXOS
-* Try Apache Cotton
-
-## Exercises
-
-Running a web application on Mesos (node.js + mongo)
-something like: https://github.com/ContainerSolutions/node-openshift-sample
-2 containers: 1 for frontend (node js), 1 for backend (mongodb)
-
-1. deploy frontend
-2. deploy backend
-3. link frontend and backend
-4. scale up frontend
-5. kill some of the frontend
+## Presentation
 
 ### Mesos
 
+* What is Mesos, what problem does it solve and what can I do with it?
+** Mesos is a distributed resource manager that allows you to treat your machines as a single computer. 
+*** Reuse the same machines for multiple workloads. Instead of sepaeate ES, Hadoop and Spark clusters use the same machines.
+*** Cost savings through increased utilization
+*** Mesos applications can react dynamically by spawning or removing tasks based on the environment
 * How can I find application logs?
 * How can I see what is running on the cluster?
 * How can I deploy a framework/application?
@@ -102,3 +77,23 @@ something like: https://github.com/ContainerSolutions/node-openshift-sample
 * How do I change the Mesos version in MM?
 * How can I use MM with my integration tests?
 * What is the Maven plugin?
+
+## Exercises
+
+Running a web application on Mesos (node.js + mongo)
+something like: https://github.com/ContainerSolutions/node-openshift-sample
+2 containers: 1 for frontend (node js), 1 for backend (mongodb)
+
+1. deploy frontend
+2. deploy backend
+3. link frontend and backend
+4. scale up frontend
+5. kill some of the frontend
+
+## Notes
+
+* Add links to CS blogs in slides
+* Downsides of Ansible / Chef is that they create a static partitioning of the cluster.
+* Try satellite for monitoring 
+* Add links to papers: Mesos, Zookeeper, PAXOS
+* Try Apache Cotton

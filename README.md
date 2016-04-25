@@ -110,7 +110,7 @@
 ### Zookeeper
 
 1. List Zookeeper state for Mesos Elasticsearch
-  Go to Weave Scope and login to the Zookeeper container
+  * Go to Weave Scope and login to the Zookeeper container
 
 ### Application
 

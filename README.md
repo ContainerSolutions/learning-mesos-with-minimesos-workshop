@@ -2,7 +2,7 @@
 
 ## Workshop structure
 
-* Presentation - Covers Mesos, Zookeeper, frameworks & Marathon
+* Presentation - Cookbook style presentation which covers Mesos, Zookeeper, frameworks & Marathon
 * Exercises - Covers the same topics but now with focused exercises using minimesos
 * Wrap up - Summarize what we learned, allow for Q&A and discuss further learning
 
@@ -16,17 +16,23 @@
     * Reuse the same machines for multiple workloads.
     * Instead of sepaeate ES, Hadoop and Spark clusters use the same machines.
     * Cost savings through increased utilization Mesos applications can react dynamically by spawning or removing tasks based on the environment
-* How can I find application logs?
-* How can I see what is running on the cluster?
 * How can I deploy a framework/application?
+  * Show how to run ELK from Java mode so it connects to the Master.
+* How can I find application logs?
+  * Explain the sandbox
 * How do I shut down a framework/application? (Note, cannot reconnect with same name after shutdown)
+* How can I see what is running on the cluster?
+  * Show UI and state file
 * How can I see how much resources the cluster has left?
+  * Show UI and show state file 
+* How does resource scheduling work?
+  * Explain DRF
+* How does leader election work?
+  * Explain PAXOS
 * How do I authenticate a framework?
 * How do I configure role reservations?
-* What is the sandbox?
 * How do I distribute files and binaries through the cluster?
 * What is the difference between an application and a framework?
-* Why would I want to write/use a framework?
 * Where can I get state information? (state.json, tasks.json and /help)
 * How do I meaure resource utilization of my Mesos cluster?
 * What does it mean when I specify `cpus=1.5`?
@@ -35,7 +41,6 @@
 * What happens when you fork bomb a Mesos cluster?
 * How can I monitor my cluster?
 * What is the replicated log?
-* How does DRF work?
 * What happens if the master is killed?
 * What is PAXOS?
 * What is safe mode?
@@ -50,6 +55,7 @@
 * What is the sandbox?
 * How does sandbox garbage collection work?
 * What happens is a scheduler is killed?
+* Why would I want to write/use a framework?
 * How do I write a framework?
 ** The easiest way is to use mesosframework. Second easiest way is to use Mesos Starter. Finally you can write your own using the HTTP or libmesos APIs in your favorite language.
 

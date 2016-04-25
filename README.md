@@ -10,6 +10,8 @@
 
 ### Mesos
 
+#### Basics
+
 * What is Mesos, what problem does it solve and what can I do with it?
   * Mesos is a distributed resource manager that allows you to treat your machines as a single computer.
   * Benefits
@@ -30,22 +32,24 @@
   * Explain DRF
 * How does leader election work?
   * Explain PAXOS
+* Where can I get state information? (state.json, tasks.json and /help)
+* What does it mean when I specify `cpus=1.5`?
+
+### Advanced
+  
 * How do I authenticate a framework?
 * How do I configure role reservations?
 * How do I distribute files and binaries through the cluster?
 * What is the difference between an application and a framework?
-* Where can I get state information? (state.json, tasks.json and /help)
-* How do I meaure resource utilization of my Mesos cluster?
-* What does it mean when I specify `cpus=1.5`?
 * What is IP per container?
 * What is a good level of utilization?
 * What happens when you fork bomb a Mesos cluster?
 * How can I monitor my cluster?
 * What is the replicated log?
 * What happens if the master is killed?
-* What is PAXOS?
 * What is safe mode?
 * What is checkpointing?
+* How do I meaure resource utilization of my Mesos cluster?
  
 ### Frameworks
 

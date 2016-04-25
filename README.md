@@ -11,10 +11,11 @@
 ### Mesos
 
 * What is Mesos, what problem does it solve and what can I do with it?
-** Mesos is a distributed resource manager that allows you to treat your machines as a single computer. 
-*** Reuse the same machines for multiple workloads. Instead of sepaeate ES, Hadoop and Spark clusters use the same machines.
-*** Cost savings through increased utilization
-*** Mesos applications can react dynamically by spawning or removing tasks based on the environment
+  * Mesos is a distributed resource manager that allows you to treat your machines as a single computer.
+  * Benefits
+    * Reuse the same machines for multiple workloads.
+    * Instead of sepaeate ES, Hadoop and Spark clusters use the same machines.
+    * Cost savings through increased utilization Mesos applications can react dynamically by spawning or removing tasks based on the environment
 * How can I find application logs?
 * How can I see what is running on the cluster?
 * How can I deploy a framework/application?

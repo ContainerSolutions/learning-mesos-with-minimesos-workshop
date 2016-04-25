@@ -3,7 +3,7 @@
 ## Workshop structure
 
 * Presentation - Covers Mesos, Zookeeper, frameworks & Marathon
-* Exercises using minimesos - Covers the same topics but now with focused exercises using minimesos
+* Exercises - Covers the same topics but now with focused exercises using minimesos
 * Wrap up - Summarize what we learned, allow for Q&A and discuss further learning
 
 ## Presentation

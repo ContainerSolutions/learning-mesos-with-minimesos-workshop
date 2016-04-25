@@ -14,8 +14,9 @@
   * Mesos is a distributed resource manager that allows you to treat your machines as a single computer.
   * Benefits
     * Reuse the same machines for multiple workloads.
-    * Instead of sepaeate ES, Hadoop and Spark clusters use the same machines.
-    * Cost savings through increased utilization Mesos applications can react dynamically by spawning or removing tasks based on the environment
+    * Instead of separate ES, Hadoop and Spark clusters use the same machines.
+    * Cost savings through increased utilization.
+    * Mesos applications can react dynamically by spawning or removing tasks based on the environment
 * How can I deploy a framework/application?
   * Show how to run ELK from Java mode so it connects to the Master.
 * How can I find application logs?

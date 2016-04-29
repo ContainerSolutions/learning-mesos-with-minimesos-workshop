@@ -1,0 +1,30 @@
+{
+    "id":"postgres",
+    "env": {
+        "POSTGRES_USER": "postgres",
+        "POSTGRES_PASSWORD": "postgres"
+    },
+    "container": {
+        "type": "DOCKER",
+        "docker": {
+            "network": "BRIDGE",
+            "image": "postgres"
+        },
+        "volumes": [
+            {
+                "hostPath": "/var/lib/postgresql/data",
+                "containerPath": "/var/lib/postgresql/data",
+                "mode": "RW"
+            },
+            {
+                "hostPath": "/run/postgresql",
+                "containerPath": "/run/postgresql",
+                "mode": "RW"
+            }
+        ]
+    },
+    "cpus": 1,
+    "mem": 512,
+    "instances": 1,
+    "constraints": [["hostname", "UNIQUE"]]
+}

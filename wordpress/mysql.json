@@ -1,0 +1,26 @@
+{
+    "id":"mysql",
+    "env": {
+        "MYSQL_ROOT_PASSWORD": "RNwULK1oySla",
+        "MYSQL_USER": "wordpress",
+        "MYSQL_PASSWORD": "ahHMo40y7Oht"
+    },
+    "container": {
+        "type": "DOCKER",
+        "docker": {
+            "network": "BRIDGE",
+            "image": "mysql:5.7.12"
+        },
+        "volumes": [
+            {
+                "hostPath": "/mysql/data",
+                "containerPath": "/var/lib/mysql",
+                "mode": "RW"
+            }
+        ]
+    },
+    "cpus": 1,
+    "mem": 512,
+    "instances": 1,
+    "constraints": [["hostname", "UNIQUE"]]
+}

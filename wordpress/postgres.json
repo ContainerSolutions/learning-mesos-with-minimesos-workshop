@@ -1,8 +1,8 @@
 {
     "id":"postgres",
     "env": {
-        "POSTGRES_USER": "postgres",
-        "POSTGRES_PASSWORD": "postgres"
+        "POSTGRES_USER": "wordpress",
+        "POSTGRES_PASSWORD": "ahHMo40y7Oht"
     },
     "container": {
         "type": "DOCKER",
@@ -12,12 +12,12 @@
         },
         "volumes": [
             {
-                "hostPath": "/var/lib/postgresql/data",
+                "hostPath": "postgresql/data",
                 "containerPath": "/var/lib/postgresql/data",
                 "mode": "RW"
             },
             {
-                "hostPath": "/run/postgresql",
+                "hostPath": "postgresql/run",
                 "containerPath": "/run/postgresql",
                 "mode": "RW"
             }

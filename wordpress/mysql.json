@@ -1,9 +1,7 @@
 {
     "id":"mysql",
     "env": {
-        "MYSQL_ROOT_PASSWORD": "RNwULK1oySla",
-        "MYSQL_USER": "wordpress",
-        "MYSQL_PASSWORD": "ahHMo40y7Oht"
+        "MYSQL_ROOT_PASSWORD": "RNwULK1oySla"
     },
     "container": {
         "type": "DOCKER",

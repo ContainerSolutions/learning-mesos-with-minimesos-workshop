@@ -102,7 +102,7 @@
 * If you run Docker Machine first run `make setup` to add routing rules so the minimesos containers are reachable
 * Run `minimesos help` to see what commands are available
 * Create a `minimesosFile` with `minimesos init`
-* Change the name of the cluster to your name and launch the cluster with `minimesos up`
+* Change the name of the cluster to your name, set `mapAgentSandboxVolume` to `true` and launch the cluster with `minimesos up`
 * Run `docker ps` to see what kind of containers are runnning
 * Run `minimesos info` to find the endpoints of the containers in the minimesos cluster
 * Visit the Master's UI at `$MINIMESOS_MASTER:5050`

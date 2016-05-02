@@ -111,7 +111,7 @@
 * Launch the cluster with `minimesos up`. This may take a bit since images have to be downloaded
 * Run `docker ps` to see what kind of containers are runnning
 * Run `minimesos info` to find the endpoints of the containers in the minimesos cluster 
-* Go back to the terminal. Display the Master's state information using `minimesos state` and see if you can find the cluster name you changed
+* Display the Master's state information using `minimesos state` and see if you can find the cluster name you changed
 * Now retrieve the Master's state file from `$MINIMESOS_MASTER:5050/state.json`
 * Find the container ID of the Mesos agent using `docker ps`. Now retrieve the state information using `minimesos state --agent <CONTAINER_ID>`
 * Now retrieve the Agent's state file from `$MINIMESOS_MASTER:5051/state.json`. Note that the Master and Agent state files are quite different. Why?

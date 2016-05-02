@@ -1,13 +1,5 @@
 # learning-mesos-with-minimesos-workshop
 
-## Workshop structure
-
-* Presentation - Cookbook style presentation which covers Mesos, Zookeeper, frameworks & Marathon
-* Exercises - Covers the same topics but now with focused exercises using minimesos
-* Wrap up - Summarize what we learned, allow for Q&A and discuss further learning
-
-## Presentation
-
 ### Mesos
 
 #### Basics

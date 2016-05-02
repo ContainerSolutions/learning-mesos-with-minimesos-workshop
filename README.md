@@ -86,8 +86,9 @@
 
 ### Minimesos known issues
 
-* When creating a volume it might not be visible on the host because either they are created by a user than is not available on the host.
+* When creating a volume it might not be visible on the host because they are created on a directory structure that is not mapped from Docker Machine to the host
 * All Mesos containers: Master, Agent and Marathon have their own network stack which causes some subtle issues because containers will use a different network stack than the host.
+* Minimesos has a bug if you run on Fedora: https://github.com/ContainerSolutions/minimesos/issues/290
 
 ### Mesos
 

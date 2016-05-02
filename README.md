@@ -102,14 +102,13 @@
 
 ### Zookeeper
 
-1. List Zookeeper state for Mesos Elasticsearch
+* List Zookeeper state for Mesos Elasticsearch
   * Go to Weave Scope and login to the Zookeeper container
 
 ### Weave Scope
 
 * Go to http://host:4040 to see the Weave Scope UI.
   * Check that all minimesos containers are running.
-
 * Login to the Zookeeper container
   * Find `zkCli.sh` and start the shell.
 

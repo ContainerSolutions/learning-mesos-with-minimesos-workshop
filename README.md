@@ -125,19 +125,10 @@
 
 First clone this repository and switch to `wordpress` directory.
 
-1. Deploy the MySQL container
-
-Use `minimesos install` to install the MySQL container. It is running on port 3306 and accessible on the IP of the Mesos Agent.
-
-To find the IP address of the Mesos Agent run
-
-`$ docker inspect CONTAINER_ID | grep IP`
-
-Go to the Mesos master UI and check that the MySQL container is in a `RUNNING` state
-
-2. Deploy the Wordpress container 
-
-Use `minimesos install` to install the Wordpress container. It is running on port 3306 and accessible on the IP of the Mesos Agent.
+* Deploy the MySQL container
+  * Use `minimesos install` to install the MySQL container. It is running on port 3306 and accessible on the IP of the Mesos Agent. To find the IP address of the Mesos Agent run `$ docker inspect CONTAINER_ID | grep IP`. Go to the Mesos master UI and check that the MySQL container is in a `RUNNING` state
+* Deploy the Wordpress container 
+  * Use `minimesos install` to install the Wordpress container. It is running on port 3306 and accessible on the IP of the Mesos Agent.
 
 ### Application
 

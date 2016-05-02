@@ -101,7 +101,7 @@
 
 ### Installation
 
-* If you haven't already install minimesos: http://minimesos.readthedocs.io/en/latest/
+* Install minimesos if you haven't already: http://minimesos.readthedocs.io/en/latest/
   
 #### Cli
 

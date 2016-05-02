@@ -94,11 +94,6 @@
 2. View the Weave Scope UI
 3. Destroy the cluster. Change the amount of resources and now retrieve the state file again
 
-### Marathon
-
-1. Deploy nginx and connect to it 
-2. Check the Weave Scope UI to see your nginx container
-
 ### Frameworks
 
 1. Deploy Mesos Elasticsearch
@@ -107,6 +102,46 @@
 
 1. List Zookeeper state for Mesos Elasticsearch
   * Go to Weave Scope and login to the Zookeeper container
+
+### Weave Scope
+
+1. Go to http://host:4040 to see the Weave Scope UI.
+
+Check that all minimesos containers are running.
+
+2. Login to the Zookeeper container
+
+Find `zkCli.sh` and start the shell.
+
+### Marathon
+
+1. Go to the Marathon endpoint
+
+Click 'Create'. Click the 'Docker container settings' and fill in `nginx` as the Docker image. Now click '+Create'.
+
+2. Check if nginx is running
+
+NOTE: In regular Mesos you can click on the task and the link to jump to the nginx endpoint. This does not work on minimesos because the nginx container uses a different network stack than Marathon because Marathon runs in a container. In a production Mesos cluster Marathon, the Mesos Agent and the containers all use the host's network stack. An upcoming feature in Mesos called 'IP Per container' will change this situation but this is not supported yet.
+
+3. Check the Weave Scope UI to see your nginx container
+
+### Wordpress exercise
+
+First clone this repository and switch to `wordpress` directory.
+
+1. Deploy the MySQL container
+
+Use `minimesos install` to install the MySQL container. It is running on port 3306 and accessible on the IP of the Mesos Agent.
+
+To find the IP address of the Mesos Agent run
+
+`$ docker inspect CONTAINER_ID | grep IP`
+
+Go to the Mesos master UI and check that the MySQL container is in a `RUNNING` state
+
+2. Deploy the Wordpress container 
+
+Use `minimesos install` to install the Wordpress container. It is running on port 3306 and accessible on the IP of the Mesos Agent.
 
 ### Application
 

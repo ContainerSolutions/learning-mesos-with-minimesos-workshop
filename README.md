@@ -99,12 +99,10 @@
 
 ### Minimesos basics (15 minutes)
 
-### Setup
+### Installation
 
-* If you haven't already create a Docker Machine called `default`
-  * `$ docker-machine create default --driver virtualbox`
-* Clone the minimesos project and run `make setup` from that folder to add routing rules so the minimesos containers are reachable
-
+* If you haven't already install minimesos: http://minimesos.readthedocs.io/en/latest/
+  
 #### Cli
 
 * Run `minimesos help` to see what commands are available

@@ -101,8 +101,8 @@
 
 ### Setup
 
-* If you haven't already create a Docker Machine called minimesos
-  * `$ docker-machine create minimesos --driver virtualbox`
+* If you haven't already create a Docker Machine called `default`
+  * `$ docker-machine create default --driver virtualbox`
 * Clone the minimesos project and run `make setup` from that folder to add routing rules so the minimesos containers are reachable
 
 #### Cli

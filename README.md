@@ -105,7 +105,7 @@
 * What happens if you run `minimesos init` again?
 * What happens if you run `minimesos up` again?
 * Run `minimesos destroy`. What does `minimesos info` say? And `docker ps`?
-* Go to http://host:4040 to see the Weave Scope UI.
+* Go to `http://host:4040` to see the Weave Scope UI.
   * Check that all minimesos containers are running.
 
 You can use the above commands during the next few exercises to find information about your setup. Feel free to experiment, destroy your cluster and make changes to the `minimesosFile`. If there are commands you think are missing let us know!

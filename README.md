@@ -92,6 +92,10 @@
 
 ## Exercises
 
+### Minimesos known issues
+
+* When creating a volume it might not be visible on the host because either they are created by a user than is not available on the host.
+
 ### Mesos
 
 1. Create a default minimesos cluster and retrieve the state file

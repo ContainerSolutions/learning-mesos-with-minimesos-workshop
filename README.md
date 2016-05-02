@@ -99,12 +99,18 @@
 
 ### Minimesos basics (15 minutes)
 
+### Setup
+
+* If you haven't already create a Docker Machine called minimesos
+  * `$ docker-machine create minimesos --driver virtualbox`
+* Clone the minimesos project and run `make setup` from that folder to add routing rules so the minimesos containers are reachable
+
 #### Cli
 
-* If you run Docker Machine first run `make setup` to add routing rules so the minimesos containers are reachable
 * Run `minimesos help` to see what commands are available
 * Create a `minimesosFile` with `minimesos init`
-* Change the name of the cluster to your name, set `mapAgentSandboxVolume` to `true` and launch the cluster with `minimesos up`
+* Change the name of the cluster to your name, set `mapAgentSandboxVolume` to `true`
+* Launch the cluster with `minimesos up`. This may take a bit since images have to be downloaded
 * Run `docker ps` to see what kind of containers are runnning
 * Run `minimesos info` to find the endpoints of the containers in the minimesos cluster 
 * Go back to the terminal. Display the Master's state information using `minimesos state` and see if you can find the cluster name you changed

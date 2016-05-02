@@ -150,10 +150,10 @@ You can use the above commands during the next few exercises to find information
   *  Go to https://github.com/mesos/elasticsearch, follow the 'read the docs' link and copy the Marathon JSON file
 * Check to see if its running
 * Go to the UI and scale up
-  *  Why does it not scale up? ;-)
+  *  Why does it not scale up? ;-) Check the Master logs to see what is happening
 * Destroy your cluster, add extra agents so you have 5 and run `minimesos up` again
-* Now scale up to 5 nodes
-* Go to the Elasticsearch /_nodes endpoint and check that you have 5 different Elasticsearch nodes 
+* Now scale up to 5 Elasticsearch nodes
+* Go to the Elasticsearch  `_nodes` endpoint and check that you have 5 different Elasticsearch nodes 
 * Go to Weave Scope and login to the `zookeeper` container
 * Find the `zkCli.sh` script and create a shell
 * Now list the contents. You should see a `mesos-es` z-node which contains state information of Mesos Elasticsearch
@@ -173,4 +173,3 @@ First clone this repository and switch to `wordpress` directory.
 * Downsides of Ansible / Chef is that they create a static partitioning of the cluster.
 * Try satellite for monitoring 
 * Add links to papers: Mesos, Zookeeper, PAXOS
-* Try Apache Cotton

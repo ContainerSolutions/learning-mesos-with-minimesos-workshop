@@ -115,15 +115,15 @@ Find `zkCli.sh` and start the shell.
 
 ### Marathon
 
-1. Go to the Marathon endpoint
+1) Go to the Marathon endpoint
 
 Click 'Create'. Click the 'Docker container settings' and fill in `nginx` as the Docker image. Now click '+Create'.
 
-2. Check if nginx is running
+2) Check if nginx is running
 
 NOTE: In regular Mesos you can click on the task and the link to jump to the nginx endpoint. This does not work on minimesos because the nginx container uses a different network stack than Marathon because Marathon runs in a container. In a production Mesos cluster Marathon, the Mesos Agent and the containers all use the host's network stack. An upcoming feature in Mesos called 'IP Per container' will change this situation but this is not supported yet.
 
-3. Check the Weave Scope UI to see your nginx container
+3) Check the Weave Scope UI to see your nginx container
 
 ### Wordpress exercise
 

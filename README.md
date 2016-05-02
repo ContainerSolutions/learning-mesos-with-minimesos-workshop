@@ -106,7 +106,10 @@
 * Run `docker ps` to see what kind of containers are runnning
 * Run `minimesos info` to find the endpoints of the containers in the minimesos cluster
 * Visit the Master's UI at `$MINIMESOS_MASTER:5050`
-* Display the Master's state information using `minimesos state` and see if you can find the cluster name you changed
+* Find the Weave Scope task logs
+* Go to `http://host:4040` to see the Weave Scope UI.
+  * Check that all minimesos containers are running.
+* Go back to the terminal. Display the Master's state information using `minimesos state` and see if you can find the cluster name you changed
 * Now retrieve the Master's state file from `$MINIMESOS_MASTER:5050/state.json`
 * Find the container ID of the Mesos agent using `docker ps`. Now retrieve the state information using `minimesos state --agent <CONTAINER_ID>`
 * Now retrieve the Agent's state file from `$MINIMESOS_MASTER:5051/state.json`. Note that the Master and Agent state files are quite different. Why?
@@ -114,8 +117,6 @@
 * What happens if you run `minimesos init` again?
 * What happens if you run `minimesos up` again?
 * Run `minimesos destroy`. What does `minimesos info` say? And `docker ps`?
-* Go to `http://host:4040` to see the Weave Scope UI.
-  * Check that all minimesos containers are running.
 
 You can use the above commands during the next few exercises to find information about your setup. Feel free to experiment, destroy your cluster and make changes to the `minimesosFile`. If there are commands you think are missing let us know!
 

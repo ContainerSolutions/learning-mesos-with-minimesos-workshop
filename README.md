@@ -98,7 +98,14 @@
 
 ### Frameworks
 
-1. Deploy Mesos Elasticsearch
+* Deploy Mesos Elasticsearch
+  *  Go to https://github.com/mesos/elasticsearch, follow the 'read the docs' link and copy the Marathon JSON file
+* Check to see if its running
+* Go to the UI and scale up
+  *  Why does it not scale up? ;-)
+* Destroy your cluster, add extra agents so you have 5 and run `minimesos up` again
+* Now scale up to 5 nodes
+* Go to the Elasticsearch /_nodes endpoint and check that you have 5 different Elasticsearch nodes 
 
 ### Zookeeper
 
@@ -118,8 +125,7 @@
   * Click 'Create'. Click the 'Docker container settings' and fill in `nginx` as the Docker image. Now click '+Create'.
 * Check if nginx is running
   * NOTE: In regular Mesos you can click on the task and the link to jump to the nginx endpoint. This does not work on minimesos because the nginx container uses a different network stack than Marathon because Marathon runs in a container. In a production Mesos cluster Marathon, the Mesos Agent and the containers all use the host's network stack. An upcoming feature in Mesos called 'IP Per container' will change this situation but this is not supported yet.
-
-3) Check the Weave Scope UI to see your nginx container
+* Check the Weave Scope UI to see your nginx container
 
 ### Wordpress exercise
 

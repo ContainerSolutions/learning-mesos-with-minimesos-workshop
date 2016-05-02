@@ -90,6 +90,13 @@
 * All Mesos containers: Master, Agent and Marathon have their own network stack which causes some subtle issues because containers will use a different network stack than the host.
 * Minimesos has a bug if you run on Fedora: https://github.com/ContainerSolutions/minimesos/issues/290
 
+### Tips & tricks
+ 
+* Kill and remove all Docker containers
+  * `alias dacr='docker rm -f $(docker ps -q -a)'`
+* Find the IP address of a container
+  * `docker inspect --format '{{.NetworkSettings.IPAddress}}' "CONTAINERID"`
+
 ### Minimesos basics (15 minutes)
 
 * Run `minimesos help` to see what commands are available

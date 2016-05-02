@@ -122,7 +122,7 @@ You can use the above commands during the next few exercises to find information
 * Now scale it up to 3 instances
 * Now scale it down to 1 instance
 
-### Frameworks
+### Frameworks (15 minutes)
 
 * Deploy Mesos Elasticsearch
   *  Go to https://github.com/mesos/elasticsearch, follow the 'read the docs' link and copy the Marathon JSON file
@@ -132,14 +132,11 @@ You can use the above commands during the next few exercises to find information
 * Destroy your cluster, add extra agents so you have 5 and run `minimesos up` again
 * Now scale up to 5 nodes
 * Go to the Elasticsearch /_nodes endpoint and check that you have 5 different Elasticsearch nodes 
+* Go to Weave Scope and login to the `zookeeper` container
+* Find the `zkCli.sh` script and create a shell
+* Now list the contents. You should see a `mesos-es` z-node which contains state information of Mesos Elasticsearch
 
-### Zookeeper
-
-* List Zookeeper state for Mesos Elasticsearch
-  * Go to Weave Scope and login to the Zookeeper container
-
-
-### Wordpress exercise
+### Wordpress (15 minutes)
 
 First clone this repository and switch to `wordpress` directory.
 
@@ -147,18 +144,6 @@ First clone this repository and switch to `wordpress` directory.
   * Use `minimesos install` to install the MySQL container. It is running on port 3306 and accessible on the IP of the Mesos Agent. To find the IP address of the Mesos Agent run `$ docker inspect CONTAINER_ID | grep IP`. Go to the Mesos master UI and check that the MySQL container is in a `RUNNING` state
 * Deploy the Wordpress container 
   * Use `minimesos install` to install the Wordpress container. It is running on port 3306 and accessible on the IP of the Mesos Agent.
-
-### Application
-
-Running a web application on Mesos (node.js + mongo)
-something like: https://github.com/ContainerSolutions/node-openshift-sample
-2 containers: 1 for frontend (node js), 1 for backend (mongodb)
-
-1. deploy frontend
-2. deploy backend
-3. link frontend and backend
-4. scale up frontend
-5. kill some of the frontend
 
 ## Notes
 

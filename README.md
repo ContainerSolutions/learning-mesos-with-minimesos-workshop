@@ -90,11 +90,23 @@
 * All Mesos containers: Master, Agent and Marathon have their own network stack which causes some subtle issues because containers will use a different network stack than the host.
 * Minimesos has a bug if you run on Fedora: https://github.com/ContainerSolutions/minimesos/issues/290
 
-### Mesos
+### Minimesos basics
 
-1. Create a default minimesos cluster and retrieve the state file
-2. View the Weave Scope UI
-3. Destroy the cluster. Change the amount of resources and now retrieve the state file again
+* Run `minimesos help` to see what commands are available
+* Create a `minimesosFile` with `minimesos init`
+* Change the name of the cluster to your name and launch the cluster with `minimesos up`
+* Run `docker ps` to see what kind of containers are runnning
+* Run `minimesos info` to find the endpoints of the containers in the minimesos cluster
+* Display the Master's state information using `minimesos state` and see if you can find the cluster name you changed
+* Now retrieve the Master's state file from `$MINIMESOS_MASTER:5050/state.json`
+* Find the container ID of the Mesos agent using `docker ps`. Now retrieve the state information using `minimesos state --agent <CONTAINER_ID>`
+* Now retrieve the Agent's state file from `$MINIMESOS_MASTER:5051/state.json`. Note that the Master and Agent state files are quite different. Why?
+* Look inside the `.minimesos` folder in the directory you created the minimesos cluster. What is in it?
+* What happens if you run `minimesos init` again?
+* What happens if you run `minimesos up` again?
+* Run `minimesos destroy`. What does `minimesos info` say? And `docker ps`?
+
+You can use the above commands during the next few exercises to find information about your setup. Feel free to experiment, destroy your cluster and make changes to the `minimesosFile`. If there are commands you think are missing let us know!
 
 ### Frameworks
 

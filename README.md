@@ -107,11 +107,11 @@
 
 ### Weave Scope
 
-#### Go to http://host:4040 to see the Weave Scope UI.
+* Go to http://host:4040 to see the Weave Scope UI.
 
 Check that all minimesos containers are running.
 
-#### Login to the Zookeeper container
+* Login to the Zookeeper container
 
 Find `zkCli.sh` and start the shell.
 

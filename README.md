@@ -90,7 +90,7 @@
 * All Mesos containers: Master, Agent and Marathon have their own network stack which causes some subtle issues because containers will use a different network stack than the host.
 * Minimesos has a bug if you run on Fedora: https://github.com/ContainerSolutions/minimesos/issues/290
 
-### Minimesos basics
+### Minimesos basics (15 minutes)
 
 * Run `minimesos help` to see what commands are available
 * Create a `minimesosFile` with `minimesos init`
@@ -105,8 +105,22 @@
 * What happens if you run `minimesos init` again?
 * What happens if you run `minimesos up` again?
 * Run `minimesos destroy`. What does `minimesos info` say? And `docker ps`?
+* Go to http://host:4040 to see the Weave Scope UI.
+  * Check that all minimesos containers are running.
 
 You can use the above commands during the next few exercises to find information about your setup. Feel free to experiment, destroy your cluster and make changes to the `minimesosFile`. If there are commands you think are missing let us know!
+
+### Marathon (15 minutes)
+
+* Go to the Marathon endpoint using the `minimesos` commands you used earlier
+  * Click 'Create'. Click the 'Docker container settings' and fill in `nginx` as the Docker image. Now click '+Create'.
+* Check if nginx is running by accessing `$MINIMESOS_AGENT:80`
+  * NOTE: In regular Mesos you can click on the task and the link to jump to the nginx endpoint. This does not work on minimesos because the nginx container uses a different network stack than Marathon because Marathon runs in a container. In a production Mesos cluster Marathon, the Mesos Agent and the containers all use the host's network stack. An upcoming feature in Mesos called 'IP Per container' will change this situation but this is not supported yet.
+* Check the Weave Scope UI to check if your nginx container is running
+* Now destroy your container via the UI
+* Now start it again
+* Now scale it up to 3 instances
+* Now scale it down to 1 instance
 
 ### Frameworks
 
@@ -124,20 +138,6 @@ You can use the above commands during the next few exercises to find information
 * List Zookeeper state for Mesos Elasticsearch
   * Go to Weave Scope and login to the Zookeeper container
 
-### Weave Scope
-
-* Go to http://host:4040 to see the Weave Scope UI.
-  * Check that all minimesos containers are running.
-* Login to the Zookeeper container
-  * Find `zkCli.sh` and start the shell.
-
-### Marathon
-
-* Go to the Marathon endpoint
-  * Click 'Create'. Click the 'Docker container settings' and fill in `nginx` as the Docker image. Now click '+Create'.
-* Check if nginx is running
-  * NOTE: In regular Mesos you can click on the task and the link to jump to the nginx endpoint. This does not work on minimesos because the nginx container uses a different network stack than Marathon because Marathon runs in a container. In a production Mesos cluster Marathon, the Mesos Agent and the containers all use the host's network stack. An upcoming feature in Mesos called 'IP Per container' will change this situation but this is not supported yet.
-* Check the Weave Scope UI to see your nginx container
 
 ### Wordpress exercise
 

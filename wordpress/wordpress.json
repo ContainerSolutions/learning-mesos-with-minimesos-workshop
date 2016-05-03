@@ -2,8 +2,9 @@
   "id":"wordpress",
   "env": {
     "WORDPRESS_DB_HOST": "mysql.service.consul:3306",
-    "WORDPRESS_DB_USER": "root",
-    "WORDPRESS_DB_PASSWORD": "RNwULK1oySla"
+    "WORDPRESS_DB_NAME": "wp",
+    "WORDPRESS_DB_USER": "wpdb",
+    "WORDPRESS_DB_PASSWORD": "e2AtRUUlgLel"
   },
   "container": {
     "type": "DOCKER",
@@ -11,7 +12,7 @@
       "network": "BRIDGE",
       "image": "wordpress:4.5.1",
       "parameters": [
-        { "key": "dns", "value": "${NETWORK_GATEWAY}" }
+        { "key": "dns", "value": "${MINIMESOS_CONSUL_IP}" }
       ]
     }
   },

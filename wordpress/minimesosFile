@@ -48,14 +48,9 @@ minimesos {
     }
 
     consul {
-        imageName = "containersol/consul-server"
-        imageTag = "0.6"
     }
 
     marathon {
-        imageName = "mesosphere/marathon"
-        imageTag = "v0.15.3"
-
         // Add 'app { marathonJson = "<path or URL to JSON file>" }' for every task you want to execute
         app {
             marathonJson = "https://raw.githubusercontent.com/ContainerSolutions/minimesos/27744df7071fb2d4ab15562bf2654ec37f4d539d/apps/weave-scope.json"
@@ -63,18 +58,11 @@ minimesos {
     }
 
     master {
-        imageName = "containersol/mesos-master"
-        imageTag = "# derive from mesos version"
-        loggingLevel = "# INHERIT FROM CLUSTER"
     }
 
     registrator {
-        imageName = "gliderlabs/registrator"
-        imageTag = "v6"
     }
 
     zookeeper {
-        imageName = "jplock/zookeeper"
-        imageTag = "3.4.6"
     }
 }

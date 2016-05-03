@@ -1,24 +1,29 @@
 {
-    "id":"mysql",
-    "env": {
-        "MYSQL_ROOT_PASSWORD": "RNwULK1oySla"
+  "id": "mysql",
+  "env": {
+    "MYSQL_ROOT_PASSWORD": "RNwULK1oySla",
+    "MYSQL_USER": "wpdb",
+    "MYSQL_PASSWORD": "e2AtRUUlgLel",
+    "MYSQL_DATABASE": "wp"
+  },
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "network": "BRIDGE",
+      "image": "mysql:5.7.12"
     },
-    "container": {
-        "type": "DOCKER",
-        "docker": {
-            "network": "BRIDGE",
-            "image": "mysql:5.7.12"
-        },
-        "volumes": [
-            {
-                "hostPath": "/mysql/data",
-                "containerPath": "/var/lib/mysql",
-                "mode": "RW"
-            }
-        ]
-    },
-    "cpus": 1,
-    "mem": 512,
-    "instances": 1,
-    "constraints": [["hostname", "UNIQUE"]]
+    "volumes": [
+      {
+        "hostPath": "/data/mysql",
+        "containerPath": "/var/lib/mysql",
+        "mode": "RW"
+      }
+    ]
+  },
+  "cpus": 1,
+  "mem": 512,
+  "instances": 1,
+  "constraints": [
+    ["hostname", "UNIQUE"]
+  ]
 }

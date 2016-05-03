@@ -75,7 +75,7 @@
 * How can I scale my simple application?
 * How can I destroy?
 
-### MiniMesos
+### minimesos
 
 * How do I configure resources in MM?
 * How do I change the Mesos version in MM?
@@ -84,11 +84,11 @@
 
 ## Exercises
 
-### Minimesos known issues
+### minimesos known issues
 
 * When creating a volume it might not be visible on the host because they are created on a directory structure that is not mapped from Docker Machine to the host
 * All Mesos containers: Master, Agent and Marathon have their own network stack which causes some subtle issues because containers will use a different network stack than the host.
-* Minimesos has a bug if you run on Fedora: https://github.com/ContainerSolutions/minimesos/issues/290
+* `minimesos` has a bug if you run on Fedora: https://github.com/ContainerSolutions/minimesos/issues/290
 
 ### Tips & tricks
  
@@ -97,7 +97,7 @@
 * Find the IP address of a container
   * `docker inspect --format '{{.NetworkSettings.IPAddress}}' "CONTAINERID"`
 
-### Minimesos basics (15 minutes)
+### minimesos basics (15 minutes)
 
 ### Installation
 

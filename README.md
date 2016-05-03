@@ -87,15 +87,21 @@
 ### minimesos known issues
 
 * When creating a volume it might not be visible on the host because they are created on a directory structure that is not mapped from Docker Machine to the host
-* All Mesos containers: Master, Agent and Marathon have their own network stack which causes some subtle issues because containers will use a different network stack than the host.
-* `minimesos` has a bug if you run on Fedora: https://github.com/ContainerSolutions/minimesos/issues/290
+* All Mesos containers: Master, Agent and Marathon have their own network stack which causes some subtle issues because containers will use a different network stack than the host. See https://github.com/ContainerSolutions/minimesos/issues/401
+* `minimesos` does not run on Fedora because it comes with docker from RedHat, which has slightly different API. See https://github.com/ContainerSolutions/minimesos/issues/290
 
 ### Tips & tricks
  
 * Kill and remove all Docker containers
-  * `alias dacr='docker rm -f $(docker ps -q -a)'`
+  * `docker rm -f $(docker ps -q -a)`
 * Find the IP address of a container
   * `docker inspect --format '{{.NetworkSettings.IPAddress}}' "CONTAINERID"`
+* print IP addresses of all running containers
+  * `for i in $(docker ps -q); do echo -n $i" "; docker inspect --format '{{ .NetworkSettings.IPAddress }}' $i; done`
+* creating and managing docker machine
+  * create `docker-machine create -d virtualbox --virtualbox-memory 8192 --virtualbox-cpu-count 1 minimesos`
+  * prepare environment `eval $(docker-machine env minimesos)`
+  * adjust routing table `sudo route delete 172.17.0.0/16; sudo route -n add 172.17.0.0/16 $(docker-machine ip ${DOCKER_MACHINE_NAME})`
 
 ### minimesos basics (15 minutes)
 
@@ -125,9 +131,9 @@
 #### Mesos UI & Weave Scope
 
 * Visit the Master's UI at `$MINIMESOS_MASTER:5050`
-* Find the Weave Scope task logs
-* Check out the frameworks and agent tab to check if everthing is working as expected
-* Go to `http://host:4040` to see the Weave Scope UI.
+* Find the Weave Scope task logs in UI
+* Check out the frameworks and agent tab to check if everything is working as expected
+* Go to `http://${MINIMESOS_NETWORK_GATEWAY}:4040` to see the Weave Scope UI.
   * Check that all minimesos containers are running.
 
 You can use the above commands during the next few exercises to find information about your setup. Feel free to experiment, destroy your cluster and make changes to the `minimesosFile`. If there are commands you think are missing let us know!
@@ -136,7 +142,8 @@ You can use the above commands during the next few exercises to find information
 
 * Go to the Marathon endpoint using the `minimesos` commands you used earlier
   * Click 'Create'. Click the 'Docker container settings' and fill in `nginx` as the Docker image. Now click '+Create'.
-* Check if nginx is running by accessing `$MINIMESOS_AGENT:80`
+  * Figure out IP address of the new container. There are a few ways to do it. What are they?
+* Check if nginx is running by accessing `$NEW_CONTAINER_IP:80`
   * NOTE: In regular Mesos you can click on the task and the link to jump to the nginx endpoint. This does not work on minimesos because the nginx container uses a different network stack than Marathon because Marathon runs in a container. In a production Mesos cluster Marathon, the Mesos Agent and the containers all use the host's network stack. An upcoming feature in Mesos called 'IP Per container' will change this situation but this is not supported yet: https://github.com/ContainerSolutions/minimesos/issues/420
 * Check the Weave Scope UI to check if your nginx container is running
 * Now destroy your container via the UI
@@ -147,13 +154,13 @@ You can use the above commands during the next few exercises to find information
 ### Frameworks (15 minutes)
 
 * Deploy Mesos Elasticsearch
-  *  Go to https://github.com/mesos/elasticsearch, follow the 'read the docs' link and copy the Marathon JSON file
+  *  Go to https://github.com/mesos/elasticsearch, follow the 'read the docs' link, copy the Marathon JSON file and install the framework
 * Check to see if its running
 * Go to the UI and scale up
   *  Why does it not scale up? ;-) Check the Master logs to see what is happening
-* Destroy your cluster, add extra agents so you have 5 and run `minimesos up` again
-* Now scale up to 5 Elasticsearch nodes
-* Go to the Elasticsearch  `_nodes` endpoint and check that you have 5 different Elasticsearch nodes 
+* Destroy your cluster, add extra agents so you have 3 and run `minimesos up` again
+* Now scale up to 3 Elasticsearch nodes
+* Go to the Elasticsearch  `_nodes` endpoint and check that you have 3 different Elasticsearch nodes 
 * Go to Weave Scope and login to the `zookeeper` container
 * Find the `zkCli.sh` script and create a shell
 * Now list the contents. You should see a `mesos-es` z-node which contains state information of Mesos Elasticsearch

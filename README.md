@@ -154,7 +154,9 @@ You can use the above commands during the next few exercises to find information
 ### Frameworks (15 minutes)
 
 * Deploy Mesos Elasticsearch
-  *  Go to https://github.com/mesos/elasticsearch, follow the 'read the docs' link, copy the Marathon JSON file and install the framework
+  * Go to https://github.com/mesos/elasticsearch, follow the 'read the docs' link and copy the Marathon JSON file
+  * Update the file by either adding Zookeeper IP address or using ${MINIMESOS_ZOOKEEPER} token instead of entire URI
+  * Change the network mode from HOST to BRIDGE
 * Check to see if its running
 * Go to the UI and scale up
   *  Why does it not scale up? ;-) Check the Master logs to see what is happening
@@ -164,6 +166,12 @@ You can use the above commands during the next few exercises to find information
 * Go to Weave Scope and login to the `zookeeper` container
 * Find the `zkCli.sh` script and create a shell
 * Now list the contents. You should see a `mesos-es` z-node which contains state information of Mesos Elasticsearch
+* Review the content of JSON file you used
+  * Which docker image is running?
+  * What does this image contain?
+  * What does "that thing" find Mesos Master?
+  * Where are executors coming from?
+  * How is http://mesos-elasticsearch.readthedocs.io/en/latest/#using-jar-files-instead-of-docker-images different from your JSON? How does it change your answers to the questions above?
 
 ### Wordpress (15 minutes)
 

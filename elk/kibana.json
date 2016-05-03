@@ -1,0 +1,20 @@
+{
+  "id": "elasticsearch",
+  "container": {
+    "docker": {
+      "image": "kibana:5.0.0",
+      "network": "BRIDGE"
+    }
+  },
+  "args": [
+    "--zookeeperMesosUrl", "${MINIMESOS_ZOOKEEPER}",
+    "--useIpAddress", "true",
+    "--frameworkUseDocker", "false"
+  ],
+  "cpus": 0.2,
+  "mem": 512.0,
+  "env": {
+    "JAVA_OPTS": "-Xms128m -Xmx256m"
+  },
+  "instances": 1
+}

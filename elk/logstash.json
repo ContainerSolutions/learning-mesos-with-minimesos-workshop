@@ -1,0 +1,21 @@
+{
+  "id": "logstash",
+  "container": {
+    "docker": {
+      "image": "mesos/logstash-scheduler:0.10-RC1",
+      "network": "BRIDGE"
+    }
+  },
+  "args": [
+  ],
+  "cpus": 0.2,
+  "mem": 512.0,
+  "env": {
+    "MESOS_ROLE": "*",
+    "MESOS_ZOOKEEPER_SERVER": "${MINIMESOS_ZOOKEEPER_IP}:${MINIMESOS_ZOOKEEPER_PORT}",
+    "MESOS_MASTER": "${MINIMESOS_MASTER_IP}:${MINIMESOS_MASTER_PORT}",
+    "ENABLE_FILE": "true",
+    "EXECUTOR_FILE_PATH": "*"
+  },
+  "instances": 1
+}

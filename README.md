@@ -154,9 +154,9 @@ You can use the above commands during the next few exercises to find information
 ### Frameworks (15 minutes)
 
 * Deploy Mesos Elasticsearch
-  * Go to https://github.com/mesos/elasticsearch, follow the 'read the docs' link and copy the Marathon JSON file
+  * Checkout the [Mesos Elasticsearch Marathon JSON file!](elk/es.json)
   * Update the file by either adding Zookeeper IP address or using ${MINIMESOS_ZOOKEEPER} token instead of entire URI
-  * Change the network mode from HOST to BRIDGE
+  * Change the network mode from **HOST** to **BRIDGE**
 * Check to see if its running
 * Go to the UI and scale up
   *  Why does it not scale up? ;-) Check the Master logs to see what is happening

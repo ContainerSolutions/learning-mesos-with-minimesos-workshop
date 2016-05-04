@@ -68,12 +68,18 @@ You can use the above commands during the next few exercises to find information
 Feel free to experiment during this exercise, destroy your cluster and make changes to the `minimesosFile`. 
 
 ### Marathon (15 minutes)
-
-* Go to the Marathon endpoint using the `minimesos` commands you used earlier
+* Destroy any existing minimesos cluster.
+* Now `cd <gitreporoot>/nginx` and create a new cluster based on the miniMesosfile in that directory, by running `minimesos up`
+* Evaluate the export's again.
+* Go to the Marathon endpoint, printed out two steps ago.
   * Click 'Create'. Click the 'Docker container settings' and fill in `nginx` as the Docker image. Now click '+Create'.
   * Figure out IP address of the new container. There are a few ways to do it. What are they?
 * Check if nginx is running by accessing `$NEW_CONTAINER_IP:80`
-  * NOTE: In regular Mesos you can click on the task and the link to jump to the nginx endpoint. This does not work on minimesos because the nginx container uses a different network stack than Marathon because Marathon runs in a container. In a production Mesos cluster Marathon, the Mesos Agent and the containers all use the host's network stack. An upcoming feature in Mesos called 'IP Per container' will change this situation but this is not supported yet: https://github.com/ContainerSolutions/minimesos/issues/420
+  * NOTE: In regular Mesos you can click on the task and the link to jump to the nginx endpoint.
+    This does not work on minimesos because the nginx container uses a different network stack than Marathon because Marathon
+    runs in a container. In a production Mesos cluster Marathon, the Mesos Agent and the containers all use the host's network stack.
+    An upcoming feature in Mesos called 'IP Per container' will change this situation but this is not
+    supported yet: https://github.com/ContainerSolutions/minimesos/issues/420
 * Check the Weave Scope UI to check if your nginx container is running
 * Now destroy your container via the UI
 * Now start it again

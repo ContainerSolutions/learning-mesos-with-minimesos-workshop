@@ -88,7 +88,8 @@ Feel free to experiment during this exercise, destroy your cluster and make chan
 
 ### Mesos Elasticsearch (15 minutes)
 
-Mesos Elasticseach is a Mesos frameworks that deploys Elasticsearch on Mesos. Checkout http://elasticsearch.mesosframeworks.com website and read about what it does.
+Mesos Elasticseach is a Mesos frameworks that deploys Elasticsearch on Mesos.
+Checkout http://elasticsearch.mesosframeworks.com website and read about what it does.
 
 * Deploying the framework
   * Checkout the [Mesos Elasticsearch Marathon JSON file](elk/es.json)

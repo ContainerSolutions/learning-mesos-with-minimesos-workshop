@@ -96,7 +96,6 @@ Mesos Elasticseach is a Mesos frameworks that deploys Elasticsearch on Mesos. Ch
   * Destroy your cluster, add extra `agent` blocks so you have 3 and run `minimesos up` again
   * Now scale up to 3 Elasticsearch nodes
   * Go to 'Tasks' and click on an Elasticsearch endpoint. You will see the standard Elasticsearch endpoint. Now append `_nodes` to the url to view the `_nodes` endpoint. Check that it lists 3 different Elasticsearch nodes 
-  * Open Weave Scope on `http://${MINIMESOS_NETWORK_GATEWAY}:4040` and select the `zookeeper` container
 
 ### Wordpress (15 minutes)
 

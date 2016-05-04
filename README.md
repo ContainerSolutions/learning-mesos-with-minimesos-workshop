@@ -155,15 +155,16 @@ You can use the above commands during the next few exercises to find information
 
 * Deploy Mesos Elasticsearch
   * Checkout the [Mesos Elasticsearch Marathon JSON file!](elk/es.json)
-  * Update the file by either adding Zookeeper IP address or using ${MINIMESOS_ZOOKEEPER} token instead of entire URI
+  * Note that the file contains a a token ${MINIMESOS_ZOOKEEPER} which will be replaced by the URL to the Zookeeper container
   * Change the network mode from **HOST** to **BRIDGE**
+  * Now deploy it with `minimesos install`
 * Check to see if its running
 * Go to the UI and scale up
   *  Why does it not scale up? ;-) Check the Master logs to see what is happening
-* Destroy your cluster, add extra agents so you have 3 and run `minimesos up` again
+* Destroy your cluster, add extra `agent` blocks so you have 3 and run `minimesos up` again
 * Now scale up to 3 Elasticsearch nodes
-* Go to the Elasticsearch  `_nodes` endpoint and check that you have 3 different Elasticsearch nodes 
-* Go to Weave Scope and login to the `zookeeper` container
+* Go to 'Tasks' and click on an Elasticsearch endpoint. You will see the standard Elasticsearch endpoint. Now append `_nodes` to the url to view the `_nodes` endpoint. Check that it lists 3 different Elasticsearch nodes 
+* Open Weave Scope on `http://${MINIMESOS_NETWORK_GATEWAY}:4040` and select the `zookeeper` container
 * Find the `zkCli.sh` script and create a shell
 * Now list the contents. You should see a `mesos-es` z-node which contains state information of Mesos Elasticsearch
 * Review the content of JSON file you used

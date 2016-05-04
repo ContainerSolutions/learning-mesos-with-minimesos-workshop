@@ -1,4 +1,9 @@
 # learning-mesos-with-minimesos-workshop
+We suggest that you clone this git repository to your machine,
+and use an editor to step throught each task; by doing it this way,
+you will always know which steps you have done already.
+
+Futhermore, you'll be using the other files in this repository during the exercises.
 
 ## Exercises
 

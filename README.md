@@ -78,7 +78,6 @@ Mesos Elasticseach is a Mesos frameworks that deploys Elasticsearch on Mesos. Ch
   * Note that the file contains a a token `${MINIMESOS_ZOOKEEPER}` which will be replaced by the URL to the Zookeeper container
   * Which docker image is running?
   * What does this image contain?
-  * Change the network mode from `HOST` to `BRIDGE`
   * Now deploy it with `minimesos install`
   * Go the the Marthon UI. You should see an Elasticsearch task with status 'Waiting'. Hover over the 'Waiting' text. What does it say?
   * Compare the amount of memory and cpu required by Elasticsearch versus the amount of memory and cpu of your `agent` in your `minimesosFile`

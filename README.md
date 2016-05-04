@@ -136,6 +136,8 @@ First clone this repository and switch to `wordpress` directory.
   * Click on `Last 15 minutes` in upper right corner and enable auto-refresh
   * Execute `echo "log file -> logstash -> elastic search -> kibana" >> .minimesos/test.log`
   * Check Kibana 
+* Questions:
+  * Why Consul could not help to connect to Elastic Search nodes?
 
 ## Notes
 

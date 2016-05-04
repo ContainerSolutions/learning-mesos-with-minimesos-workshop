@@ -76,6 +76,8 @@ Mesos Elasticseach is a Mesos frameworks that deploys Elasticsearch on Mesos. Ch
 * Deploying the framework
   * Checkout the [Mesos Elasticsearch Marathon JSON file](elk/es.json)
   * Note that the file contains a a token `${MINIMESOS_ZOOKEEPER}` which will be replaced by the URL to the Zookeeper container
+  * Which docker image is running?
+  * What does this image contain?
   * Change the network mode from `HOST` to `BRIDGE`
   * Now deploy it with `minimesos install`
   * Go the the Marthon UI. You should see an Elasticsearch task with status 'Waiting'. Hover over the 'Waiting' text. What does it say?
@@ -95,15 +97,6 @@ Mesos Elasticseach is a Mesos frameworks that deploys Elasticsearch on Mesos. Ch
   * Now scale up to 3 Elasticsearch nodes
   * Go to 'Tasks' and click on an Elasticsearch endpoint. You will see the standard Elasticsearch endpoint. Now append `_nodes` to the url to view the `_nodes` endpoint. Check that it lists 3 different Elasticsearch nodes 
   * Open Weave Scope on `http://${MINIMESOS_NETWORK_GATEWAY}:4040` and select the `zookeeper` container
-* Framework state in Zookeeper
-  * Find the `zkCli.sh` script and create a shell
-  * Now list the contents. You should see a `mesos-es` z-node which contains state information of Mesos Elasticsearch
-  * Review the content of JSON file you used
-  * Which docker image is running?
-  * What does this image contain?
-  * What does "that thing" find Mesos Master?
-  * Where are executors coming from?
-  * How is http://mesos-elasticsearch.readthedocs.io/en/latest/#using-jar-files-instead-of-docker-images different from your JSON? How does it change your answers to the questions above?
 
 ### Wordpress (15 minutes)
 

@@ -72,9 +72,9 @@ You can use the above commands during the next few exercises to find information
 ### Frameworks (15 minutes)
 
 * Deploy Mesos Elasticsearch
-  * Checkout the [Mesos Elasticsearch Marathon JSON file!](elk/es.json)
-  * Note that the file contains a a token ${MINIMESOS_ZOOKEEPER} which will be replaced by the URL to the Zookeeper container
-  * Change the network mode from **HOST** to **BRIDGE**
+  * Checkout the [Mesos Elasticsearch Marathon JSON file](elk/es.json)
+  * Note that the file contains a a token `${MINIMESOS_ZOOKEEPER}` which will be replaced by the URL to the Zookeeper container
+  * Change the network mode from `HOST` to `BRIDGE`
   * Now deploy it with `minimesos install`
 * Go the the Marthon UI. You should see an Elasticsearch task with status 'Waiting'. Hover over the 'Waiting' text. What does it say?
 * Compare the amount of memory required by Elasticsearch versus the amount of memory of your `agent` in your `minimesosFile`

@@ -112,10 +112,12 @@ First clone this repository and switch to `wordpress` directory.
   
 ## Experiments
   
-### Inslalling ELK - ElasticSearch, LogStash and Kibana
+In the last hour of the workshop you are free to experiment with minimesos by deploying your own applications. Alternatively, you can install the ELK stack. See below
+
+### Installing ELK - ElasticSearch, LogStash and Kibana
 
 * Clone https://github.com/ContainerSolutions/learning-mesos-with-minimesos-workshop
-* Change to `elk` directory and check the content of `minimesosFile`
+* Change to the `elk` directory and check the content of `minimesosFile`
   * How many agents will be running?
   * What applications will be installed after the cluster is up?
   * Review content of JSON files to install these applications

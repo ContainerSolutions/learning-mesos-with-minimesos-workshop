@@ -116,7 +116,7 @@ Checkout http://elasticsearch.mesosframeworks.com website and read about what it
 
 ### Wordpress (15 minutes)
 
-First clone this repository and switch to `wordpress` directory.
+Switch to the `wordpress` directory in your cloned git repository.
 
 * Deploy the MySQL container
   * Use `minimesos install` to install the MySQL container. It is running on port 3306 and accessible on the container IP. 

@@ -37,6 +37,7 @@ Before you start with the exercises, we'd like to share some known isssues and t
 * Change the name of the cluster to your name, set `mapAgentSandboxVolume` to `true`.
   These settings can be found in the `minimesosFile` you generated in the previous step.
 * Launch the cluster with `minimesos up`. This may take a bit since images have to be downloaded
+* Copy, paste and run the `export` commands that are printed out by the previous step.
 * Run `docker ps` to see what kind of containers are runnning
 * Run `minimesos info` to find the endpoints of the containers in the minimesos cluster 
 * Display the Master's state information using `minimesos state` and see if you can find the cluster name you changed

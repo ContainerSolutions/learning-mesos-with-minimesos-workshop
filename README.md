@@ -109,6 +109,33 @@ First clone this repository and switch to `wordpress` directory.
 * Review content of `wordpress.json` file
   * What address does Wordpress use to find MySql?
   * How does Wordpress container resolve this address? 
+  
+## Experiments
+  
+### Inslalling ELK - ElasticSearch, LogStash and Kibana
+
+* Clone https://github.com/ContainerSolutions/learning-mesos-with-minimesos-workshop
+* Change to `elk` directory and check the content of `minimesosFile`
+  * How many agents will be running?
+  * What applications will be installed after the cluster is up?
+  * Review content of JSON files to install these applications
+* Start the cluster and open reported URLs for Mesos Master, Marathon. Open Weave Scope UI
+  * How many different frameworks run in the cluster?
+  * Open UI of installed ElasticSearch framework and check address of running ES node
+  * Are there any indices? Check this in ES framework UI and by querying ES node
+* Update `LOGSTASH_ELASTICSEARCH_HOST` value in `logstash.json`. Replace it with IP and port of running ES node. Install LogStash
+  * Check in both Marathon and Mesos Master is LogStash Scheduler is running. LogStash agent?
+  * Are there any ES indices created?
+* Update `ELASTICSEARCH_URL` value in `kibana.json` - update IP and port. Install Kibana
+  * It is a framework? or task?
+  * What Kibana IP is reported in Mesos UI? Does it match real IP of the docker container? Why?
+  * Looking at running Kibana container, figure out URL of the application and open it.
+* Browse data in Kibana
+  * Agree on using `logstash-*` indices
+  * Go to `Discover` menu item
+  * Click on `Last 15 minutes` in upper right corner and enable auto-refresh
+  * Execute `echo "log file -> logstash -> elastic search -> kibana" >> .minimesos/test.log`
+  * Check Kibana 
 
 ## Notes
 
@@ -117,9 +144,9 @@ First clone this repository and switch to `wordpress` directory.
 * Try satellite for monitoring 
 * Add links to papers: Mesos, Zookeeper, PAXOS
 
-### Questions
+## Questions
 
-#### Basics
+### Basics
 
 * What is Mesos, what problem does it solve and what can I do with it?
   * Mesos is a distributed resource manager that allows you to treat your machines as a single computer.

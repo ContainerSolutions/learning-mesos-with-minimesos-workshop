@@ -84,7 +84,7 @@ Mesos Elasticseach is a Mesos frameworks that deploys Elasticsearch on Mesos. Ch
   * Compare the amount of memory and cpu required by Elasticsearch versus the amount of memory and cpu of your `agent` in your `minimesosFile`
   * Destroy your cluster, change your `agent`'s resources in the `minimesosFile` and create a new cluster
   * Now try deploying again
-* Using the Mesos Master UI
+* Using the Mesos Master, Marathon and Mesos Elasticsearch UIs
   * Now Open the Mesos Master UI. There should be 2 tasks: `elasticsearch` and `elasticsearch-executor`
   * Click on the 'Frameworks' tab. You should see Marathon and Elasticsearch.
   * Click on the Elasticsearch framework. Click the Web UI link on the left. Try out the different tabs and views

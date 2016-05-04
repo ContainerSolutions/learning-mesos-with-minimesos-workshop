@@ -35,26 +35,24 @@ Before you start with the exercises, we'd like to share some known isssues and t
 
 * Install minimesos if you haven't already: http://minimesos.readthedocs.io/en/latest/
   
-#### Cli
+#### CLI
 
 * Run `minimesos help` to see what commands are available
 * Create a `minimesosFile` with `minimesos init`
-* Change the name of the cluster to your name, set `mapAgentSandboxVolume` to `true`.
+* Change the name of the cluster to your name, and set `mapAgentSandboxVolume` to `true`
+  (just to practise chaning these settings).
   These settings can be found in the `minimesosFile` you generated in the previous step.
 * Launch the cluster with `minimesos up`. This may take a bit since images have to be downloaded
 * Copy, paste and run the `export` commands that are printed out by the previous step.
 * Run `docker ps` to see what kind of containers are runnning
 * Run `minimesos info` to find the endpoints of the containers in the minimesos cluster 
-* Display the Master's state information using `minimesos state` and see if you can find the cluster name you changed
-* Now retrieve the Master's state file from `$MINIMESOS_MASTER/state.json`
-* Find the container ID of the Mesos agent using `docker ps`. Now retrieve the state information using `minimesos state --agent <CONTAINER_ID>`
-* Now retrieve the Agent's state file from `$MINIMESOS_MASTER:5051/state.json`. Note that the Master and Agent state files are quite different. Why?
 * Look inside the `.minimesos` folder in the directory you created the minimesos cluster. What is in it?
 * Traverse the `sandbox-` directory structure and find the logs for the Weave Scope task.
+  (HINT: use find/tree. The file name is stdout/stderr in some directory)
 * What happens if you run `minimesos init` again?
 * What happens if you run `minimesos up` again?
 * Run `minimesos destroy`. What does `minimesos info` say? And `docker ps`?
-* Recreate your cluster
+* Done!
 
 #### Mesos UI & Weave Scope
 

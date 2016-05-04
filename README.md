@@ -69,27 +69,36 @@ You can use the above commands during the next few exercises to find information
 * Now scale it up to 3 instances
 * Now scale it down to 1 instance
 
-### Frameworks (15 minutes)
+### Mesos Elasticsearch (15 minutes)
 
-* Deploy Mesos Elasticsearch
+Mesos Elasticseach is a Mesos frameworks that deploys Elasticsearch on Mesos. Checkout http://elasticsearch.mesosframeworks.com website and read about what it does.
+
+* Deploying the framework
   * Checkout the [Mesos Elasticsearch Marathon JSON file](elk/es.json)
   * Note that the file contains a a token `${MINIMESOS_ZOOKEEPER}` which will be replaced by the URL to the Zookeeper container
   * Change the network mode from `HOST` to `BRIDGE`
   * Now deploy it with `minimesos install`
-* Go the the Marthon UI. You should see an Elasticsearch task with status 'Waiting'. Hover over the 'Waiting' text. What does it say?
-* Compare the amount of memory and cpu required by Elasticsearch versus the amount of memory and cpu of your `agent` in your `minimesosFile`
-* Destroy your cluster, change your `agent`'s resources in the `minimesosFile` and create a new cluster
-* Now try deploying again. It should now be running.
-* Open the Mesos Master UI and click on the 'Frameworks' tab
-* You should see Marathon and Elasticsearch. Why is the host of Elasticsearch an alphanumeric number?
+  * Go the the Marthon UI. You should see an Elasticsearch task with status 'Waiting'. Hover over the 'Waiting' text. What does it say?
+  * Compare the amount of memory and cpu required by Elasticsearch versus the amount of memory and cpu of your `agent` in your `minimesosFile`
+  * Destroy your cluster, change your `agent`'s resources in the `minimesosFile` and create a new cluster
+  * Now try deploying again
+* Using the Mesos Master UI
+  * Now Open the Mesos Master UI. There should be 2 tasks: `elasticsearch` and `elasticsearch-executor`
+  * Click on the 'Frameworks' tab. You should see Marathon and Elasticsearch.
+  * Click on the Elasticsearch framework. Click the Web UI link on the left. Try out the different tabs and views
+  * Now index some Tweets via this tutorial: https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-index_.html
+  * In the Mesos Elasticsearch UI open the 'Query Browser' and find your Tweets
+* Scaling up
+  * In the Mesos Elasticsearch UI open the 'Scaling' tab. Change the number of nodes to 3
   *  Why does it not scale up? ;-) Check the Master logs to see what is happening
-* Destroy your cluster, add extra `agent` blocks so you have 3 and run `minimesos up` again
-* Now scale up to 3 Elasticsearch nodes
-* Go to 'Tasks' and click on an Elasticsearch endpoint. You will see the standard Elasticsearch endpoint. Now append `_nodes` to the url to view the `_nodes` endpoint. Check that it lists 3 different Elasticsearch nodes 
-* Open Weave Scope on `http://${MINIMESOS_NETWORK_GATEWAY}:4040` and select the `zookeeper` container
-* Find the `zkCli.sh` script and create a shell
-* Now list the contents. You should see a `mesos-es` z-node which contains state information of Mesos Elasticsearch
-* Review the content of JSON file you used
+  * Destroy your cluster, add extra `agent` blocks so you have 3 and run `minimesos up` again
+  * Now scale up to 3 Elasticsearch nodes
+  * Go to 'Tasks' and click on an Elasticsearch endpoint. You will see the standard Elasticsearch endpoint. Now append `_nodes` to the url to view the `_nodes` endpoint. Check that it lists 3 different Elasticsearch nodes 
+  * Open Weave Scope on `http://${MINIMESOS_NETWORK_GATEWAY}:4040` and select the `zookeeper` container
+* Framework state in Zookeeper
+  * Find the `zkCli.sh` script and create a shell
+  * Now list the contents. You should see a `mesos-es` z-node which contains state information of Mesos Elasticsearch
+  * Review the content of JSON file you used
   * Which docker image is running?
   * What does this image contain?
   * What does "that thing" find Mesos Master?

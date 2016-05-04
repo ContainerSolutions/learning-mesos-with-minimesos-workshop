@@ -56,13 +56,16 @@ Before you start with the exercises, we'd like to share some known isssues and t
 
 #### Mesos UI & Weave Scope
 
-* Visit the Master's UI at `$MINIMESOS_MASTER:5050`
+* Visit the Master's UI at `$MINIMESOS_MASTER`
 * Find the Weave Scope task logs in UI
 * Check out the frameworks and agent tab to check if everything is working as expected
-* Go to `http://${MINIMESOS_NETWORK_GATEWAY}:4040` to see the Weave Scope UI.
+* Go to `http://<MINIMESOS_NETWORK_GATEWAY>:4040` to see the Weave Scope UI.
+  * Where `<MINIMESOS_NETWORK_GATEWAY>` is localhost if you're running Docker directly on your host,
+    or if you're using Docker Machine, the IP address of the Docker Machine Virtual Machine.
   * Check that all minimesos containers are running.
 
-You can use the above commands during the next few exercises to find information about your setup. Feel free to experiment, destroy your cluster and make changes to the `minimesosFile`. If there are commands you think are missing let us know!
+You can use the above commands during the next few exercises to find information about your setup.
+Feel free to experiment during this exercise, destroy your cluster and make changes to the `minimesosFile`. 
 
 ### Marathon (15 minutes)
 

@@ -139,13 +139,6 @@ First clone this repository and switch to `wordpress` directory.
 * Questions:
   * Why Consul could not help to connect to Elastic Search nodes?
 
-## Notes
-
-* Add links to CS blogs in slides
-* Downsides of Ansible / Chef is that they create a static partitioning of the cluster.
-* Try satellite for monitoring 
-* Add links to papers: Mesos, Zookeeper, PAXOS
-
 ## Questions
 
 ### Basics

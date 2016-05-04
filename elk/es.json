@@ -9,7 +9,8 @@
   "args": [
     "--zookeeperMesosUrl", "${MINIMESOS_ZOOKEEPER}",
     "--useIpAddress", "true",
-    "--frameworkUseDocker", "false"
+    "--frameworkUseDocker", "false",
+    "--elasticsearchNodes", "1"
   ],
   "cpus": 0.2,
   "mem": 512.0,

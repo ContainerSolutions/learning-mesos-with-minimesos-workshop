@@ -1,0 +1,91 @@
+minimesos {
+    clusterName = "ELK Demo Cluster"
+    loggingLevel = "INFO"
+    mapAgentSandboxVolume = false
+    mesosVersion = "0.25"
+    timeout = 60
+
+    agent {
+        resources {
+            cpu {
+                role = "*"
+                value = 1
+            }
+            disk {
+                role = "*"
+                value = 20000
+            }
+            mem {
+                role = "*"
+                value = 4096
+            }
+            ports {
+                role = "*"
+                value = "[31000-32000]"
+            }
+        }
+    }
+    agent {
+        resources {
+            cpu {
+                role = "*"
+                value = 1
+            }
+            disk {
+                role = "*"
+                value = 20000
+            }
+            mem {
+                role = "*"
+                value = 4096
+            }
+            ports {
+                role = "*"
+                value = "[31000-32000]"
+            }
+        }
+    }
+    agent {
+        resources {
+            cpu {
+                role = "*"
+                value = 1
+            }
+            disk {
+                role = "*"
+                value = 20000
+            }
+            mem {
+                role = "*"
+                value = 4096
+            }
+            ports {
+                role = "*"
+                value = "[31000-32000]"
+            }
+        }
+    }
+
+    consul {
+    }
+
+    marathon {
+        // Add 'app { marathonJson = "<path or URL to JSON file>" }' for every task you want to execute
+        app {
+            marathonJson = "https://raw.githubusercontent.com/ContainerSolutions/minimesos/e2a43362f4581122762c80d8780d09b567783f1a/apps/weave-scope.json"
+        }
+        app {
+            marathonJson = "es.json"
+        }
+    }
+
+    master {
+    }
+
+    registrator {
+    }
+
+    zookeeper {
+    }
+
+}

@@ -12,7 +12,7 @@
   "mem": 512.0,
   "env": {
     "JAVA_OPTS": "-Xms128m -Xmx256m",
-    "ELASTICSEARCH_URL": "http://172.17.0.7:31000"
+    "ELASTICSEARCH_URL": "http://172.17.0.5:31000"
   },
   "instances": 1
 }

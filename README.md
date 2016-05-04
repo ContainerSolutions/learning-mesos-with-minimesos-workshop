@@ -19,7 +19,7 @@ Before you start with the exercises, we'd like to share some known isssues and t
   * `docker inspect --format '{{.NetworkSettings.IPAddress}}' "CONTAINERID"`
 * print IP addresses of all running containers
   * `for i in $(docker ps -q); do echo -n $i" "; docker inspect --format '{{ .NetworkSettings.IPAddress }}' $i; done`
-* creating and managing docker machine
+* creating and managing docker machine. This comes in handy if you're running OSX or Windows.
   * create `docker-machine create -d virtualbox --virtualbox-memory 8192 --virtualbox-cpu-count 1 minimesos`
   * prepare environment `eval $(docker-machine env minimesos)`
   * adjust routing table `sudo route delete 172.17.0.0/16; sudo route -n add 172.17.0.0/16 $(docker-machine ip ${DOCKER_MACHINE_NAME})`

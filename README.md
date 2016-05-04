@@ -79,8 +79,9 @@ You can use the above commands during the next few exercises to find information
 * Go the the Marthon UI. You should see an Elasticsearch task with status 'Waiting'. Hover over the 'Waiting' text. What does it say?
 * Compare the amount of memory and cpu required by Elasticsearch versus the amount of memory and cpu of your `agent` in your `minimesosFile`
 * Destroy your cluster, change your `agent`'s resources in the `minimesosFile` and create a new cluster
-* Now try deploying again
-* Go to the UI and scale up
+* Now try deploying again. It should now be running.
+* Open the Mesos Master UI and click on the 'Frameworks' tab
+* You should see Marathon and Elasticsearch. Why is the host of Elasticsearch an alphanumeric number?
   *  Why does it not scale up? ;-) Check the Master logs to see what is happening
 * Destroy your cluster, add extra `agent` blocks so you have 3 and run `minimesos up` again
 * Now scale up to 3 Elasticsearch nodes

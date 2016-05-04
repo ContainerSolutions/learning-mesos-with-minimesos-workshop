@@ -1,14 +1,22 @@
 # learning-mesos-with-minimesos-workshop
+We suggest that you clone this git repository to your machine,
+and use an editor to step throught each task; by doing it this way,
+you will always know which steps you have done already.
+
+Futhermore, you'll be using the other files in this repository during the exercises.
 
 ## Exercises
 
-### minimesos known issues
+### Before you start
+Before you start with the exercises, we'd like to share some known isssues and tips & tricks with you.
+
+#### minimesos known issues
 
 * When creating a volume it might not be visible on the host because they are created on a directory structure that is not mapped from Docker Machine to the host
 * All Mesos containers: Master, Agent and Marathon have their own network stack which causes some subtle issues because containers will use a different network stack than the host. See https://github.com/ContainerSolutions/minimesos/issues/401
 * `minimesos` does not run on Fedora because it comes with docker from RedHat, which has slightly different API. See https://github.com/ContainerSolutions/minimesos/issues/290
 
-### Tips & tricks
+#### Tips & tricks
  
 * Kill and remove all Docker containers
   * `docker rm -f $(docker ps -q -a)`
@@ -16,7 +24,7 @@
   * `docker inspect --format '{{.NetworkSettings.IPAddress}}' "CONTAINERID"`
 * print IP addresses of all running containers
   * `for i in $(docker ps -q); do echo -n $i" "; docker inspect --format '{{ .NetworkSettings.IPAddress }}' $i; done`
-* creating and managing docker machine
+* creating and managing docker machine. This comes in handy if you're running OSX or Windows.
   * create `docker-machine create -d virtualbox --virtualbox-memory 8192 --virtualbox-cpu-count 1 minimesos`
   * prepare environment `eval $(docker-machine env minimesos)`
   * adjust routing table `sudo route delete 172.17.0.0/16; sudo route -n add 172.17.0.0/16 $(docker-machine ip ${DOCKER_MACHINE_NAME})`
@@ -27,42 +35,50 @@
 
 * Install minimesos if you haven't already: http://minimesos.readthedocs.io/en/latest/
   
-#### Cli
+#### CLI
 
 * Run `minimesos help` to see what commands are available
 * Create a `minimesosFile` with `minimesos init`
-* Change the name of the cluster to your name, set `mapAgentSandboxVolume` to `true`
+* Change the name of the cluster to your name, and set `mapAgentSandboxVolume` to `true`
+  (just to practise chaning these settings).
+  These settings can be found in the `minimesosFile` you generated in the previous step.
 * Launch the cluster with `minimesos up`. This may take a bit since images have to be downloaded
 * Run `docker ps` to see what kind of containers are runnning
 * Run `minimesos info` to find the endpoints of the containers in the minimesos cluster 
-* Display the Master's state information using `minimesos state` and see if you can find the cluster name you changed
-* Now retrieve the Master's state file from `$MINIMESOS_MASTER:5050/state.json`
-* Find the container ID of the Mesos agent using `docker ps`. Now retrieve the state information using `minimesos state --agent <CONTAINER_ID>`
-* Now retrieve the Agent's state file from `$MINIMESOS_MASTER:5051/state.json`. Note that the Master and Agent state files are quite different. Why?
 * Look inside the `.minimesos` folder in the directory you created the minimesos cluster. What is in it?
 * Traverse the `sandbox-` directory structure and find the logs for the Weave Scope task.
+  (HINT: use find/tree. The file name is stdout/stderr in some directory)
 * What happens if you run `minimesos init` again?
 * What happens if you run `minimesos up` again?
 * Run `minimesos destroy`. What does `minimesos info` say? And `docker ps`?
-* Recreate your cluster
+* Done!
 
 #### Mesos UI & Weave Scope
 
-* Visit the Master's UI at `$MINIMESOS_MASTER:5050`
+* Visit the Master's UI at `$MINIMESOS_MASTER`
 * Find the Weave Scope task logs in UI
 * Check out the frameworks and agent tab to check if everything is working as expected
-* Go to `http://${MINIMESOS_NETWORK_GATEWAY}:4040` to see the Weave Scope UI.
+* Go to `http://<MINIMESOS_NETWORK_GATEWAY>:4040` to see the Weave Scope UI.
+  * Where `<MINIMESOS_NETWORK_GATEWAY>` is localhost if you're running Docker directly on your host,
+    or if you're using Docker Machine, the IP address of the Docker Machine Virtual Machine.
   * Check that all minimesos containers are running.
 
-You can use the above commands during the next few exercises to find information about your setup. Feel free to experiment, destroy your cluster and make changes to the `minimesosFile`. If there are commands you think are missing let us know!
+You can use the above commands during the next few exercises to find information about your setup.
+Feel free to experiment during this exercise, destroy your cluster and make changes to the `minimesosFile`. 
 
 ### Marathon (15 minutes)
-
-* Go to the Marathon endpoint using the `minimesos` commands you used earlier
+* Destroy any existing minimesos cluster.
+* Now `cd <gitreporoot>/nginx` and create a new cluster based on the miniMesosfile in that directory, by running `minimesos up`
+* Evaluate the export's again.
+* Go to the Marathon endpoint, printed out two steps ago.
   * Click 'Create'. Click the 'Docker container settings' and fill in `nginx` as the Docker image. Now click '+Create'.
   * Figure out IP address of the new container. There are a few ways to do it. What are they?
 * Check if nginx is running by accessing `$NEW_CONTAINER_IP:80`
-  * NOTE: In regular Mesos you can click on the task and the link to jump to the nginx endpoint. This does not work on minimesos because the nginx container uses a different network stack than Marathon because Marathon runs in a container. In a production Mesos cluster Marathon, the Mesos Agent and the containers all use the host's network stack. An upcoming feature in Mesos called 'IP Per container' will change this situation but this is not supported yet: https://github.com/ContainerSolutions/minimesos/issues/420
+  * NOTE: In regular Mesos you can click on the task and the link to jump to the nginx endpoint.
+    This does not work on minimesos because the nginx container uses a different network stack than Marathon because Marathon
+    runs in a container. In a production Mesos cluster Marathon, the Mesos Agent and the containers all use the host's network stack.
+    An upcoming feature in Mesos called 'IP Per container' will change this situation but this is not
+    supported yet: https://github.com/ContainerSolutions/minimesos/issues/420
 * Check the Weave Scope UI to check if your nginx container is running
 * Now destroy your container via the UI
 * Now start it again
@@ -71,7 +87,8 @@ You can use the above commands during the next few exercises to find information
 
 ### Mesos Elasticsearch (15 minutes)
 
-Mesos Elasticseach is a Mesos frameworks that deploys Elasticsearch on Mesos. Checkout http://elasticsearch.mesosframeworks.com website and read about what it does.
+Mesos Elasticseach is a Mesos frameworks that deploys Elasticsearch on Mesos.
+Checkout http://elasticsearch.mesosframeworks.com website and read about what it does.
 
 * Deploying the framework
   * Checkout the [Mesos Elasticsearch Marathon JSON file](elk/es.json)
@@ -98,7 +115,7 @@ Mesos Elasticseach is a Mesos frameworks that deploys Elasticsearch on Mesos. Ch
 
 ### Wordpress (15 minutes)
 
-First clone this repository and switch to `wordpress` directory.
+Switch to the `wordpress` directory in your cloned git repository.
 
 * Deploy the MySQL container
   * Use `minimesos install` to install the MySQL container. It is running on port 3306 and accessible on the container IP. 

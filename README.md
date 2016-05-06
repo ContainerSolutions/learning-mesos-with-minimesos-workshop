@@ -65,8 +65,7 @@ You can use the above commands during the next few exercises to find information
 Feel free to experiment during this exercise, destroy your cluster and make changes to the `minimesosFile`. 
 
 ### Marathon (15 minutes)
-* Destroy any existing minimesos cluster.
-* Now `cd <gitreporoot>/nginx` and create a new cluster based on the miniMesosfile in that directory, by running `minimesos up`
+* Destroy any existing minimesos cluster and recreate it by running `minimesos up`
 * Evaluate the export's again.
 * Go to the Marathon endpoint, printed out two steps ago.
   * Click 'Create'. Click the 'Docker container settings' and fill in `nginx` as the Docker image. Now click '+Create'.

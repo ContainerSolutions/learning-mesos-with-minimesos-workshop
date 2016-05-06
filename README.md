@@ -10,12 +10,6 @@ Futhermore, you'll be using the other files in this repository during the exerci
 ### Before you start
 Before you start with the exercises, we'd like to share some known isssues and tips & tricks with you.
 
-#### minimesos known issues
-
-* When creating a volume it might not be visible on the host because they are created on a directory structure that is not mapped from Docker Machine to the host
-* All Mesos containers: Master, Agent and Marathon have their own network stack which causes some subtle issues because containers will use a different network stack than the host. See https://github.com/ContainerSolutions/minimesos/issues/401
-* `minimesos` does not run on Fedora because it comes with docker from RedHat, which has slightly different API. See https://github.com/ContainerSolutions/minimesos/issues/290
-
 #### Tips & tricks
  
 * Kill and remove all Docker containers
@@ -28,6 +22,12 @@ Before you start with the exercises, we'd like to share some known isssues and t
   * create `docker-machine create -d virtualbox --virtualbox-memory 8192 --virtualbox-cpu-count 1 minimesos`
   * prepare environment `eval $(docker-machine env minimesos)`
   * adjust routing table `sudo route delete 172.17.0.0/16; sudo route -n add 172.17.0.0/16 $(docker-machine ip ${DOCKER_MACHINE_NAME})`
+
+#### minimesos known issues
+
+* When creating a volume it might not be visible on the host because they are created on a directory structure that is not mapped from Docker Machine to the host
+* All Mesos containers: Master, Agent and Marathon have their own network stack which causes some subtle issues because containers will use a different network stack than the host. See https://github.com/ContainerSolutions/minimesos/issues/401
+* `minimesos` does not run on Fedora because it comes with docker from RedHat, which has slightly different API. See https://github.com/ContainerSolutions/minimesos/issues/290
 
 ### Installation
 

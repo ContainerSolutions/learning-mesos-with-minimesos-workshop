@@ -29,8 +29,6 @@ Before you start with the exercises, we'd like to share some known isssues and t
   * prepare environment `eval $(docker-machine env minimesos)`
   * adjust routing table `sudo route delete 172.17.0.0/16; sudo route -n add 172.17.0.0/16 $(docker-machine ip ${DOCKER_MACHINE_NAME})`
 
-### minimesos basics (15 minutes)
-
 ### Installation
 
 * Install minimesos if you haven't already: http://minimesos.readthedocs.io/en/latest/

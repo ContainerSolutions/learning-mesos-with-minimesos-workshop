@@ -54,7 +54,7 @@ Before you start with the exercises, we'd like to share some known isssues and t
 
 #### Mesos UI & Weave Scope
 
-* Visit the Master's UI at `$MINIMESOS_MASTER` or use `master.mm` if you have setup `dnsmasq`.
+* Visit the Master's UI at `$MINIMESOS_MASTER` or use `master.mm:5050` if you have setup `dnsmasq`.
 * Find the Weave Scope task logs in UI
 * Check out the frameworks and agent tab to check if everything is working as expected
 * Go to `http://<MINIMESOS_NETWORK_GATEWAY>:4040` to see the Weave Scope UI.
@@ -70,7 +70,7 @@ Feel free to experiment during this exercise, destroy your cluster and make chan
 * Evaluate the export's again.
 * Go to the Marathon endpoint using the IP address from the console output or `marathon.mm:8080` when using dnsmasq.
   * Click 'Create'. Click the 'Docker container settings' and fill in `nginx` as the Docker image. Now click '+Create'.
-  * If you have set up dnsmasq got to `nginx.marathon.mm`
+  * If you have set up dnsmasq got to `nginx.marathon.mm:80`
   * If you don't have dnsmasq find out the IP address of the container. There are a few ways to do it. What are they?
 * Check if nginx is running by accessing `$NEW_CONTAINER_IP:80`
   * NOTE: In regular Mesos you can click on the task and the link to jump to the nginx endpoint.

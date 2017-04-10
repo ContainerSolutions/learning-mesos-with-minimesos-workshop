@@ -2,7 +2,7 @@ minimesos {
     clusterName = "ELK Demo Cluster"
     loggingLevel = "INFO"
     mapAgentSandboxVolume = false
-    mesosVersion = "0.25"
+    mesosVersion = "1.0.0"
     timeout = 60
 
     agent {
@@ -66,9 +66,6 @@ minimesos {
         }
     }
 
-    consul {
-    }
-
     marathon {
         // Add 'app { marathonJson = "<path or URL to JSON file>" }' for every task you want to execute
         app {
@@ -82,8 +79,9 @@ minimesos {
     master {
     }
 
-    registrator {
-    }
+	mesosdns {
+
+    } 
 
     zookeeper {
     }

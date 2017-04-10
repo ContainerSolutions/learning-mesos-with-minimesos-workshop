@@ -5,7 +5,7 @@
         "POSTGRES_PASSWORD": "ahHMo40y7Oht"
     },
     "container": {
-        "type": "DOCKER",
+        "type": "MESOS",
         "docker": {
             "network": "BRIDGE",
             "image": "postgres:9.5.2"
